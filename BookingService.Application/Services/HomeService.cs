@@ -20,6 +20,11 @@ namespace BookingService.Application.Services
                 return Error.Validation(description:"Start date cant be greater than end date");
             }
 
+            if (requestDto.StartDate < DateTime.Now)
+            {
+                return Error.Validation(description: "Start date cant be older than now");
+            }
+
             var specification = new AvailableHomeInRangeSpecification(requestDto.StartDate, requestDto.EndDate);
 
             var data = await _homeRepository.GetAllAsync(specification);
