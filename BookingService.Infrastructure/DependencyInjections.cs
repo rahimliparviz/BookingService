@@ -1,4 +1,5 @@
 ﻿using BookingService.Application.Interfaces.Repositories;
+using BookingService.Infrastructure.Data;
 using BookingService.Infrastructure.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -16,6 +17,7 @@ namespace BookingService.Infrastructure
             });
 
 
+            services.AddSingleton<InMemoryHomeDataStore>(); 
             services.AddScoped<IHomeRepository, InMemoryHomeRepository>();
             services.AddHostedService<DataCleanUpBackgroundService>();
 

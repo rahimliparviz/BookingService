@@ -1,12 +1,13 @@
 using BookingService.Application.DTOs.Home;
 using BookingService.Application.Interfaces.Services;
+using ErrorOr;
 using Microsoft.AspNetCore.Mvc;
+using UserService.Controllers;
 
 namespace BookingService.API.Controllers
 {
-    [ApiController]
-    [Route("api/")]
-    public class HomeController : ControllerBase
+  
+    public class HomeController : BaseController
     {
        private readonly IHomeService _homeService;
 
@@ -18,11 +19,12 @@ namespace BookingService.API.Controllers
         [HttpGet("available-homes")]
         public async Task<IActionResult> Get([FromQuery]AvailableHomesRequestDto availableHomesRequest)
         {
-            var availableHomes = await _homeService.GetAvailableHomesAsync(availableHomesRequest);
+            var result = await _homeService.GetAvailableHomesAsync(availableHomesRequest);
 
-            if (!availableHomes.Any()) return NotFound();
-
-            return Ok(availableHomes);
+            return result.Match(
+                Success => Ok(result.Value),
+                Errors => Problem(Errors)
+            );
         }
     }
 }

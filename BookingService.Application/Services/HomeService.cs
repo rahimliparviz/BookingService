@@ -2,6 +2,7 @@
 using BookingService.Application.Interfaces.Repositories;
 using BookingService.Application.Interfaces.Services;
 using BookingService.Application.Spesifications;
+using ErrorOr;
 
 namespace BookingService.Application.Services
 {
@@ -12,11 +13,21 @@ namespace BookingService.Application.Services
         {
             _homeRepository = homeRepository;
         }
-        public async Task<List<AvailableHomesResponseDto>> GetAvailableHomesAsync(AvailableHomesRequestDto requestDto)
+        public async Task<ErrorOr<List<AvailableHomesResponseDto>>> GetAvailableHomesAsync(AvailableHomesRequestDto requestDto)
         {
+            if (requestDto.StartDate > requestDto.EndDate)
+            {
+                return Error.Validation(description:"Start date cant be greater than end date");
+            }
+
             var specification = new AvailableHomeInRangeSpecification(requestDto.StartDate, requestDto.EndDate);
 
             var data = await _homeRepository.GetAllAsync(specification);
+
+            if (!data.Any())
+            {
+                return Error.NotFound(description: "Available homes do not found");
+            }
 
             var result = data.Select(h => new AvailableHomesResponseDto(h.Id, h.Name, h.AvailableSlots)).ToList();
 

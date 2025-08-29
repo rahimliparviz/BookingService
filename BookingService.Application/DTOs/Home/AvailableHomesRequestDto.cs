@@ -1,10 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using System.ComponentModel.DataAnnotations;
 namespace BookingService.Application.DTOs.Home
 {
-    public record AvailableHomesRequestDto(DateTime StartDate, DateTime EndDate);
+    public record AvailableHomesRequestDto
+    {
+        [Required]
+        [DataType(DataType.Date)]
+        public DateTime StartDate { get; init; }
+
+        [Required]
+        [DataType(DataType.Date)]
+        public DateTime EndDate { get; init; }
+
+    }
 }

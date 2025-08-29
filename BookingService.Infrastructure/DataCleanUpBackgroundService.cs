@@ -38,7 +38,6 @@ namespace BookingService.Infrastructure
                         }
                     }
 
-                    var a = await homeRepository.GetAllAsync();
 
                 }
 
