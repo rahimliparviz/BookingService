@@ -2,9 +2,9 @@
 {
     public class Home
     {
-        public int HomeId { get; set; }
-        public string HomeName { get; set; }
-        public List<DateTime> AvailableSlots { get; set; }= new ();
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public List<DateTime> AvailableSlots { get; set; }= new List<DateTime>();
 
     }
 }

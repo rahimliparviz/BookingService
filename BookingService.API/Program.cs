@@ -1,4 +1,5 @@
 
+using BookingService.Application;
 using BookingService.Infrastructure;
 
 namespace BookingService.API
@@ -9,8 +10,10 @@ namespace BookingService.API
         {
             var builder = WebApplication.CreateBuilder(args);
 
+
             builder.Services
                 .AddApiServices()
+                .AddApplicationServices()
                 .AddInfrastructureServices();
 
             var app = builder.Build();

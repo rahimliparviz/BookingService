@@ -4,7 +4,8 @@ namespace BookingService.Application.Interfaces.Repositories
 {
     public interface IHomeRepository
     {
-        Task<List<Home>> GetAvailableHomesAsync(DateTime startDate, DateTime endDate);
+        Task<List<Home>> GetAllAsync(ISpecification<Home> specification=null);
+        void Remove(int id);
 
     }
 }
