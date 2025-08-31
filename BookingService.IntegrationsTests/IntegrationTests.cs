@@ -1,6 +1,5 @@
 using System.Net;
 using System.Net.Http.Json;
-using System.Text.Json;
 using BookingService.API;
 using BookingService.Application.DTOs.Home;
 using BookingService.Domain;
@@ -9,8 +8,6 @@ using FluentAssertions;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-using Xunit;
 
 namespace BookingApi.IntegrationTests
 {
@@ -153,7 +150,7 @@ namespace BookingApi.IntegrationTests
                     });
                 });
             }).CreateClient();
-            var startDate = DateTime.Today.AddDays(-1); 
+            var startDate = DateTime.Today.AddDays(-1);
             var endDate = "2030-01-02";
 
             // Act
@@ -281,7 +278,7 @@ namespace BookingApi.IntegrationTests
 
     }
 
-   
+
 
 
 }

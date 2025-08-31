@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using BookingService.Application.DTOs.Home;
+﻿using BookingService.Application.DTOs.Home;
 using ErrorOr;
 
 namespace BookingService.Application.Interfaces.Services

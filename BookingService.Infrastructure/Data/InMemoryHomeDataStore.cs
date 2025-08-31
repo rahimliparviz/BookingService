@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BookingService.Domain;
+﻿using BookingService.Domain;
 
 namespace BookingService.Infrastructure.Data
 {
-    public class InMemoryHomeDataStore 
+    public class InMemoryHomeDataStore
     {
         private readonly List<Home> _homes = new List<Home>();
 

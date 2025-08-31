@@ -17,7 +17,7 @@ namespace BookingService.Application.Services
         {
             if (requestDto.StartDate > requestDto.EndDate)
             {
-                return Error.Validation(description:"Start date cant be greater than end date");
+                return Error.Validation(description: "Start date cant be greater than end date");
             }
 
             if (requestDto.StartDate < DateTime.Now)

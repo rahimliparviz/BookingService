@@ -17,7 +17,7 @@ namespace BookingService.Infrastructure
             });
 
 
-            services.AddSingleton<InMemoryHomeDataStore>(); 
+            services.AddSingleton<InMemoryHomeDataStore>();
             services.AddScoped<IHomeRepository, InMemoryHomeRepository>();
             services.AddHostedService<DataCleanUpBackgroundService>();
 

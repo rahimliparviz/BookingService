@@ -5,7 +5,7 @@ using BookingService.Infrastructure.Data;
 
 namespace BookingService.Infrastructure.Repositories
 {
-    public class InMemoryHomeRepository: IHomeRepository
+    public class InMemoryHomeRepository : IHomeRepository
     {
         private readonly List<Home> _homes = new List<Home>();
         public InMemoryHomeRepository(InMemoryHomeDataStore inMemoryHomeDataStore)

@@ -14,6 +14,6 @@ namespace BookingService.Application.Spesifications
             Criteria = home => home.AvailableSlots.Any(slot => slot < dateTime);
         }
 
-      
+
     }
 }

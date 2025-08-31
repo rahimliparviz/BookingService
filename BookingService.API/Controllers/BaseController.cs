@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace UserService.Controllers
 {
-  [ApiController]
+    [ApiController]
     [Route("api/")]
     public abstract class BaseController : ControllerBase
     {

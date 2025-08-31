@@ -18,6 +18,6 @@ namespace BookingService.Application.Spesifications
             Criteria = home => requiredDates.All(d => home.AvailableSlots.Contains(d));
         }
 
-      
+
     }
 }
