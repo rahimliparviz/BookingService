@@ -69,7 +69,7 @@ namespace BookingService.Infrastructure.Data
 
             _homes.Add(new Home
             {
-                Id = 1,
+                Id = 6,
                 Name = "Home Six",
                 AvailableSlots = new List<DateTime>
                     {
@@ -81,7 +81,7 @@ namespace BookingService.Infrastructure.Data
 
             _homes.Add(new Home
             {
-                Id = 2,
+                Id = 7,
                 Name = "Home Seven",
                 AvailableSlots = new List<DateTime>
                         {
@@ -92,7 +92,7 @@ namespace BookingService.Infrastructure.Data
 
             _homes.Add(new Home
             {
-                Id = 3,
+                Id = 8,
                 Name = "Home Eight",
                 AvailableSlots = new List<DateTime>
                     {
@@ -100,6 +100,24 @@ namespace BookingService.Infrastructure.Data
                         new DateTime(2025, 7, 4),
                         new DateTime(2025, 7, 5),
                         new DateTime(2025, 7, 6),
+                    }
+            });
+            _homes.Add(new Home
+            {
+                Id = 9,
+                Name = "Home Nine",
+                AvailableSlots = new List<DateTime>
+                    {
+                        new DateTime(2025, 12, 1),
+                        new DateTime(2025, 12, 2),
+                        new DateTime(2025, 12, 3),
+                        new DateTime(2025, 12, 4),
+                        new DateTime(2025, 12, 5),
+                        new DateTime(2025, 12, 6),
+                        new DateTime(2025, 12, 7),
+                        new DateTime(2025, 12, 8),
+                        new DateTime(2025, 12, 9),
+                        new DateTime(2025, 12, 10)
                     }
             });
         }
